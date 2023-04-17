@@ -1,0 +1,15 @@
+<div class="container mx-auto p-4">
+<body style="background-image: url(<%= asset_path 'soy.jpg' %>)">
+  <div class="my-8">
+    <h1> Bem vindo(a), <%= current_user.name %> </h1>
+    <br>
+
+    <p class="mb-2">Você já está logado(a) no sistema de auditoria de processos da Rural Soluções e Serviços</p>
+    <br>
+    <p class="mb-2">Inicie sua navegação: </p>
+    <br>
+    <%= link_to "Visualizar áreas", company_areas_path %>
+    <br>
+    <%= image_tag("tangara.jpg", style: "background-image: none;", class: "mx-auto") %>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<%# Place any links for the LEFT side of the nav bar here. Be sure to add class: "nav-link" to each item for proper spacing. %>
+<% if current_user %>
+    <%= nav_link_to "Auditoria de Processos", company_areas_path, class: "nav-link" %>
+<% end %>
+<!--<%= nav_link_to "Evaluations", evaluations_path, class: "nav-link" %>
+<%= nav_link_to "Verifications", verifications_path, class: "nav-link" %> -->
+<%= nav_link_to "Relatorios", relatorios_path, class: "nav-link" %>

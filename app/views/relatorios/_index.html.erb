@@ -1,0 +1,6 @@
+<div id="<%= dom_id(relatorio, :index) %>">
+  <%= turbo_stream_from relatorio %>
+  <%= render relatorio %>
+  <%= link_to "View", relatorio, class: "btn btn-white" %>
+</div>
+

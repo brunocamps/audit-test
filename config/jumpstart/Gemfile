@@ -1,0 +1,9 @@
+
+
+group :development do
+  gem 'guard'
+  gem 'guard-livereload', github: 'guard/guard-livereload', require: false
+  gem 'rack-livereload', github: 'jaredmdobson/rack-livereload'
+  gem 'eventmachine', github: 'eventmachine/eventmachine'
+  gem 'solargraph-rails', '~> 0.2.0.pre'
+end

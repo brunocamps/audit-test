@@ -1,0 +1,42 @@
+<%= content_for :title, "Company Areas ##{@company_area.id}" %>
+<%= turbo_stream_from @company_area %>
+<br>
+
+<h1 class="text-2xl font-bold mb-4"><%= @company_area.name %> - Lista de Processos</h1>
+
+<div class="overflow-x-auto w-full">
+<table class="min-w-full divide-y divide-gray-200">
+  <thead>
+    <tr>
+      <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Avaliação</th>
+      <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Verificação</th>
+      <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Meta</th>
+      <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Prazo</th>
+      <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Peso</th>
+      <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nota</th>
+      <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Pontuação</th>
+      <th scope="col" class="px-6 py-3 bg-gray-50"></th>
+    </tr>
+  </thead>
+  <tbody class="bg-white divide-y divide-gray-200">
+    <% @evaluations.each do |evaluation| %>
+      <% evaluation.verifications.each do |verification| %>
+        <tr>
+          <td class="px-6 py-4 whitespace-nowrap"><%= evaluation.name %></td>
+          <td class="px-6 py-4 whitespace-nowrap"><%= link_to verification.name, verification_path(verification) %></td>
+          <td class="px-6 py-4 whitespace-nowrap"><%= verification.goal %></td>
+          <td class="px-6 py-4 whitespace-nowrap"><%= verification.deadline %></td>
+          <td class="px-6 py-4 whitespace-nowrap"><%= verification.weight %></td>
+          <td class="px-6 py-4 whitespace-nowrap"><%= verification.grade %></td>
+          <td class="px-6 py-4 whitespace-nowrap"><%= verification.punctuation %></td>
+          <td class="px-6 py-4 whitespace-nowrap"><%= link_to 'View', evaluation_path(evaluation), class: 'btn btn-blue' %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+
+</table>
+</div>
+
+
+</div>

@@ -1,0 +1,30 @@
+# Replace repo url with the repository url for your Jumpstart Pro application
+services:
+  - type: web
+    repo: https://github.com/brunocamps/audit-prod-rural # Replace this url
+    name: rails
+    env: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: bundle exec rails s
+    envVars:
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: postgres://rural_audit_user:RgYSd5LPfqgwFyTFB2Hmw8hwwymc9CHj@dpg-cf2l74g2i3mnjcg5lic0-a/rural_audit
+        fromDatabase:
+          name: postgres
+          property: connectionString
+      - key: redis://red-cf2l8cun6mpkr6eph7c0:6379
+        fromService:
+          type: redis
+          name: redis
+          property: connectionString
+
+  - type: redis
+    name: redis
+    ipAllowList: [] # only allow internal connections
+    plan: free # optional (defaults to starter)
+    maxmemoryPolicy: noeviction # optional (defaults to allkeys-lru)
+
+databases:
+  - name: postgres
+    ipAllowList: [] # only allow internal connections

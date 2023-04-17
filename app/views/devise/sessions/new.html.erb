@@ -1,0 +1,28 @@
+<% content_for :form_block do %>
+
+  <%= form_with(model: resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="form-group">
+      <%= f.label :email %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email@ruralsolucoes.com.br", class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :senha %>
+      <%= f.password_field :password, autocomplete: "current-password", placeholder: "senha", class: "form-control" %>
+    </div>
+
+    <% if devise_mapping.rememberable? -%>
+      <div class="form-group">
+        <%= f.check_box :remember_me, class: "form-checkbox" %>
+        <%= f.label :lembrar_neste_computador_?, class: "inline-block" %>
+      </div>
+    <% end -%>
+
+    <div class="form-group">
+      <%= f.submit t('.sign_in'), class: "btn btn-primary btn-expanded" %>
+    </div>
+  <% end %>
+
+<% end %>
+
+<%= render "devise/shared/form_block" %>

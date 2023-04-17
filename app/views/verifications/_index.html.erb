@@ -1,0 +1,6 @@
+<div id="<%= dom_id(verification, :index) %>">
+  <%= turbo_stream_from verification %>
+  <%= render verification %>
+  <%= link_to "View", verification, class: "btn btn-white" %>
+</div>
+

@@ -1,0 +1,26 @@
+<%= content_for :title, "Evaluations ##{@evaluation.id}" %>
+<%= turbo_stream_from @evaluation %>
+
+<h1><%= @evaluation.name %> Verifications</h1>
+
+<ul>
+  <% @verifications.each do |verification| %>
+    <li><%= verification.name %> - <%= verification.grade %></li>
+  <% end %>
+</ul>
+
+
+<div class="container px-4 mx-auto my-8">
+  <div class="flex items-center justify-between mb-4">
+    <h1 class="h3">
+      <%= link_to "Evaluations", evaluations_path, class: "text-black" %>
+      <span class="text-gray-400 font-light mx-2">\</span>
+      Evaluation #<%= @evaluation.id %>
+    </h1>
+    <%= link_to t("edit"), edit_evaluation_path(@evaluation), class: "btn btn-white" %>
+  </div>
+
+  <div class="p-8 bg-white rounded shadow">
+    <%= render @evaluation %>
+  </div>
+</div>

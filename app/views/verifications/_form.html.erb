@@ -1,0 +1,53 @@
+<%= form_with(model: verification) do |form| %>
+  <%= render "shared/error_messages", resource: form.object %>
+
+  <div class="form-group">
+    <%= form.label :verificação %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :meta %>
+    <%= form.text_field :goal, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :prazo %>
+    <%= form.text_field :deadline, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :peso %>
+    <%= form.text_field :weight, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :avaliação  %>
+    <%= form.text_field :grade, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :observações_da_auditoria  %>
+    <%= form.text_field :observations, class: "form-control" %>
+  </div>
+  
+  <div class="form-group">
+    <%= form.label :evaluation_id %>
+    <%= form.collection_select :evaluation_id, Evaluation.all, :id, :name, { prompt: "Selecione uma avaliação" }, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :auditado_por %>
+  </div>
+
+
+  <div>
+    <%= form.button button_text(form.send(:submit_default_value)), class: "btn btn-primary" %>
+
+    <% if form.object.new_record? %>
+      <%= link_to t("cancel"), verifications_path, class: "btn btn-white" %>
+    <% else %>
+      <%= link_to t("cancel"), verification_path(@verification), class: "btn btn-white" %>
+    <% end %>
+  </div>
+<% end %>

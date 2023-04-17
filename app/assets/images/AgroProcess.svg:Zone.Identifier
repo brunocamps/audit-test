@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://app.hey.com/
+HostUrl=https://haystack-production-storage-us-east-1.s3.amazonaws.com/ik1wzt1g0bpmv7k171k3whwjdgyi?response-content-disposition=attachment%3B%20filename%3D%22AgroProcess.svg%22%3B%20filename%2A%3DUTF-8%27%27AgroProcess.svg&response-content-type=application%2Foctet-stream&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ742G4ISOGL5I25G%2F20220809%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220809T225526Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=09eb8eaed84578c2758b857fd6d86940405555d56d948ffe8f8167d561d76ed1

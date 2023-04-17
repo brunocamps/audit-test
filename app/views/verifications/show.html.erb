@@ -1,0 +1,17 @@
+<%= content_for :title, "Verifications ##{@verification.id}" %>
+<%= turbo_stream_from @verification %>
+
+<div class="container px-4 mx-auto my-8">
+  <div class="flex items-center justify-between mb-4">
+    <h1 class="h3">
+      <%= link_to "Verifications", verifications_path, class: "text-black" %>
+      <span class="text-gray-400 font-light mx-2">\</span>
+      Verification #<%= @verification.id %>
+    </h1>
+    <%= link_to ("Auditar"), edit_verification_path(@verification), class: "btn btn-white" %>
+  </div>
+
+  <div class="p-8 bg-white rounded shadow">
+    <%= render @verification %>
+  </div>
+</div>

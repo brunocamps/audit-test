@@ -1,0 +1,61 @@
+<%= content_for :title, "Company Areas" %>
+<%= turbo_stream_from :company_areas %>
+
+<div class="container mx-auto my-8">
+  <div class="flex items-center justify-between mb-4">
+    <div>
+      <h1 class="text-3xl font-bold">Visão Geral da Rural</h1>
+      <br>
+      <h3>Selecione a área para acessar os processos</h3>
+      <div class="text-sm font-medium">
+        <span class="text-gray-500">Sort by:</span>
+        <%= sortable @company_areas, :name, "Name", class: "text-gray-700 ml-2" %>
+      </div>
+    </div>
+  </div>
+  <div class="bg-white rounded-lg shadow overflow-hidden">
+    <table class="w-full">
+      <thead class="bg-gray-200 text-gray-700 uppercase tracking-wider text-xs font-semibold">
+        <tr>
+          <th class="px-6 py-3 text-left">Area</th>
+          <th class="px-6 py-3 text-left">Nota</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-200">
+        <% @company_areas_with_sum.each do |item| %>
+          <tr class="hover:bg-gray-100">
+            <td class="px-6 py-4 whitespace-nowrap">
+              <%= link_to item[:area].name, company_area_path(item[:area]), class: "text-indigo-600 font-medium hover:text-indigo-900" %>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap">
+              Nota: <%= item[:sum].to_f %>
+            </td>
+          </tr>
+        <% end %>
+    </tbody>
+
+    </table>
+  </div>
+</div>
+
+
+
+    <!--<%= link_to t("shared.scaffold.new.title", model: "Company Area"), new_company_area_path, class: "bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %> -->
+  </div>
+
+
+  <% if @pagy.pages > 1 %>
+    <div class="my-6 text-center">
+      <%== pagy_nav(@pagy) %>
+    </div>
+  <% end %>
+
+  
+</div>
+ 
+<div>
+  <b>Nota geral da Rural: </b>
+   A Calcular
+</div>
+
+<%= bar_chart @data %>

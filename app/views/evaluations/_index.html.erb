@@ -1,0 +1,6 @@
+<div id="<%= dom_id(evaluation, :index) %>">
+  <%= turbo_stream_from evaluation %>
+  <%= render evaluation %>
+  <%= link_to "View", evaluation, class: "btn btn-white" %>
+</div>
+
