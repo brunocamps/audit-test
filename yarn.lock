@@ -101,10 +101,10 @@
   resolved "https://registry.yarnpkg.com/@rails/request.js/-/request.js-0.0.6.tgz#5f0347a9f363e50ec45118c7134080490cda81d8"
   integrity sha512-dfFWaQXitYJ4kxrgGJNhDNXX54/v10YgoJqBMVe6lhqs6a4N9WD7goZJEvwin82TtK8MqUNhwfyisgKwM6dMdg==
 
-"@rails/ujs@^7.0.0":
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/@rails/ujs/-/ujs-7.0.0.tgz#5331285372956be4d3f2d858cef9904c11ce4b93"
-  integrity sha512-VU/tKKEj0+4QvhxkWBUwINCimtxYjy702ecvUpNUtDukilAsv4fmc/vTH5b/gSNuT5wVRf3h7o27W+JssTu4nQ==
+"@rails/ujs@^7.0.5":
+  version "7.0.5"
+  resolved "https://registry.yarnpkg.com/@rails/ujs/-/ujs-7.0.5.tgz#d35a71fe6ecd4ab88bbe4bc6c2f287c992c2de4c"
+  integrity sha512-/wQ6v4DGxhxflPWoLwGkOQoKbtIXx/LsVNKd8shRM+/HXxlVBEb+F5znN99TlxX8e/R3dN6anTPAqA+mfA5YtQ==
 
 "@tailwindcss/aspect-ratio@^0.4.0":
   version "0.4.0"
